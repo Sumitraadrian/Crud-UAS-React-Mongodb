@@ -8,7 +8,7 @@ export async function action({ request, params }) {
     let message;
     try {
         if (confirm("Hapus data ini?")) {
-            const apiUrl = `http://localhost:5000/pasien/${id}`;
+            const apiUrl = `https://crud-uas-react-mongodb.vercel.app/pasien/${id}`;
             const response = await axios.delete(apiUrl);
             message= "data berhasil dihapus";
             return redirect(`/`);
@@ -24,7 +24,7 @@ export async function action({ request, params }) {
 export async function loader({ params }) {
   const id = params?.id;
   try {
-    const apiUrl = `http://localhost:5000/pasien/id/${id}`;
+    const apiUrl = `https://crud-uas-react-mongodb.vercel.app/pasien/id/${id}`;
     const response = await axios.get(apiUrl);
 
     return response.data;

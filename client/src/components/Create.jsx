@@ -36,7 +36,7 @@ export async function action({ request, params }) {
     };
 
     console.log("ini request", requestBody);
-    const apiUrl = `http://localhost:5000/pasien`;
+    const apiUrl = `https://crud-uas-react-mongodb.vercel.app/pasien`;
     const response = await axios.post(apiUrl, requestBody);
     return { data: response.data, message: "data berhasil disimpan" };
   } catch (error) {
@@ -48,7 +48,7 @@ export async function action({ request, params }) {
 export async function loader({ params }) {
   const uid = params?.id;
   try {
-    const apiUrl = `http://localhost:5000/pasiens`;
+    const apiUrl = `https://crud-uas-react-mongodb.vercel.app/pasiens`;
     const response = await axios.get(apiUrl);
     console.log(response.data);
     return response.data;
