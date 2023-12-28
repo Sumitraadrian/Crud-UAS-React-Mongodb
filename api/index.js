@@ -3,7 +3,7 @@ const cors = require("cors");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 
-const phsRoute = require("./phsRoute.js");
+const phsRoute = require("./PhsRoute.js");
 
 dotenv.config();
 
